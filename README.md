@@ -2,6 +2,8 @@
 
 Svasthi is a full-stack mental-wellness web app. It provides daily mood check-ins, a supportive Dawn chat companion, private journal insights, habits, self-screenings, grounding exercises, and crisis-support guidance.
 
+The canonical public frontend is [svasthi-weld.vercel.app](https://svasthi-weld.vercel.app). The standalone polished UI is deployed at [frontend-six-mu-84.vercel.app](https://frontend-six-mu-84.vercel.app) and is configured to use the canonical Svasthi API in production.
+
 The repository is a small monorepo:
 
 - `frontend/` — React + Vite user interface.
@@ -103,7 +105,7 @@ See `backend/docs/api-contract.md` for the core request and response shapes.
 
 ## Production deployment on Vercel
 
-Deploy the backend and frontend as separate Vercel projects.
+Deploy the backend and frontend as separate Vercel projects. The frontend is the primary user-facing project; the backend remains its API and safety layer.
 
 1. Import `backend/` as a Vercel project.
 2. Add backend Production environment variables:
@@ -124,6 +126,11 @@ Deploy the backend and frontend as separate Vercel projects.
 6. Deploy the frontend.
 7. If Vercel issues a new backend deployment URL, rebuild the frontend with that URL or configure a stable backend domain. Confirm that `FRONTEND_ORIGIN` matches the frontend production domain exactly.
 8. Verify `GET /api/health` and a browser CORS preflight before sharing the app.
+
+Current production projects:
+
+- Frontend: `https://frontend-six-mu-84.vercel.app`
+- Backend/API: `https://svasthi-weld.vercel.app`
 
 ## Verification
 
