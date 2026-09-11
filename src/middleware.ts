@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
   if (origin && allowedOrigins.has(origin)) {
     headers.set("Access-Control-Allow-Origin", origin);
     headers.set("Access-Control-Allow-Headers", "content-type, x-svasthi-session");
-    headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    headers.set("Access-Control-Allow-Methods", "GET, POST, PATCH, OPTIONS");
     headers.set("Vary", "Origin");
   }
   if (request.method === "OPTIONS") return new NextResponse(null, { status: 204, headers });
