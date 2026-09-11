@@ -1,0 +1,12 @@
+# Dependencies and generated output
+node_modules/
+dist/
+.next/
+
+# Local configuration and deployment metadata
+.env*
+!.env.example
+.vercel/
+
+# Logs
+*.log
